@@ -1,0 +1,8 @@
+document.getElementById('appointments').insertAdjacentHTML(
+	'beforeend',
+	"<%= escape_javascript(
+		render partial: 'appointment', locals: { appointment: @appointment }
+	) %>"
+)
+
+document.getElementById('new_appointment').reset();
