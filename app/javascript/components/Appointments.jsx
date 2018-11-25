@@ -1,12 +1,26 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import AppointmentForm from './AppointmentForm';
+import AppointmentsList from './AppointmentsList';
+
 class Appointments extends React.Component {
 	render () {
+		// const appointments = this.props.appointments;
+		// const appointmentsList = appointments.map(function (appointment) {
+		// 	return (
+		// 		<Appointment
+		// 			key={appointment.id}
+		// 			title={appointment.title}
+		// 			time={appointment.time} />
+		// 	)
+		// });
+
 		return (
-			<h1>
-				This is an appointment!
-			</h1>
+			<div>
+				<AppointmentForm />
+				<AppointmentsList appointments={this.props.appointments} />
+			</div>
 		)
 	}
 }

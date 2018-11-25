@@ -2,12 +2,4 @@
 <h2>Appointments</h2>
 <h3>Make a new appointment</h3>
 
-<%= form_for(@appointment, remote: true) do |form| %>
-	<%= form.text_field :title, placeholder: 'Appointment Title' %>
-	<%= form.date_field :time %>
-	<%= form.submit 'Make appointment' %>
-<% end %>
-
-<div id="appointments">
-	<%= render partial: 'appointment', collection: @appointments %>
-</div>
+<%= react_component('Appointments', appointments: @appointments) %>
