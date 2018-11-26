@@ -1,3 +1,10 @@
+html {
+	box-sizing: border-box;
+}
+*, *::before, *::after {
+	box-sixing: inherit;
+}
+
 body {
 	width: 500px;
 	margin: auto;
@@ -5,4 +12,63 @@ body {
 	font-size: 14px;
 	line-height: 1.5;
 	padding-bottom: 200px;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	padding: 4px 16px;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.form {
+	display: flex;
+	justify-content: center;
+}
+
+/* .input-text { */
+/* 	flex-grow: 2; */
+/* } */
+
+.submit-button {
+	margin: 10px 0;
+}
+
+[type=submit] {
+	display: inline-block;
+	background: #1E6BD6;
+	border: 1px solid #1E6BD6;
+	color: white;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: .95rem;
+	font-family: sans-serif;
+	padding: .5rem 1rem;
+	vertical-align: middle;
+	white-space: nowrap;
+	cursor: pointer;
+	line-height: 1;
+	margin: .25rem 0;
+	border-radius: 18px;
+}
+
+.field {
+	font-weight: 600;
+	font-size: .95rem;
+	font-family: sans-serif;
+	margin: 10px 2px;
+	flex-grow: 1;
+}
+
+[type=text] {
+	display: inline-block;
+	border: 1px solid grey;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  font-family: sans-serif;
+  padding: .5rem 1rem;
 }
