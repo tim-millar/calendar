@@ -72,3 +72,14 @@ body {
   font-family: sans-serif;
   padding: .5rem 1rem;
 }
+
+[type=date] {
+	display: inline-block;
+	border: 1px solid grey;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  font-family: sans-serif;
+	color: grey;
+  padding: .5rem 1rem;
+}
