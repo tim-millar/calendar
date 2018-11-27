@@ -4,18 +4,24 @@ class AppointmentForm extends React.Component {
 	constructor(props) {
 		super(props)
 		this.handleChange = this.handleChange.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
 	handleChange(event) {
-		var name = event.target.name
-		var obj = {}
+		const name = event.target.name
+		let obj = {}
 		obj[name] = event.target.value
 		this.props.onUserInput(obj)
 	}
 
+	handleSubmit (event) {
+		event.preventDefault()
+		this.props.onFormSubmit()
+	}
+
 	render () {
 		return (
-			<form className="form card">
+			<form id="form" className="form card" onSubmit={this.handleSubmit}>
 				<div className="fields">
 					<div className="input-text">
 						<label htmlFor="title">Appointment Title</label><br/>
