@@ -1,11 +1,12 @@
 import React from 'react';
+import { formatDate } from './utils';
 
 class Appointment extends React.Component {
 	render () {
 		return (
 			<div className="card">
 				<h3>{this.props.title}</h3>
-				<p>{this.props.time}</p>
+				<p>{formatDate(this.props.time)}</p>
 			</div>
 		)
 	}
