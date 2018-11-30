@@ -11,8 +11,8 @@ class Appointments extends React.Component {
 		super(props)
 		this.state = {
 			appointments: this.props.appointments,
-			title: 'This is your first appointment',
-			time: '2019-01-02',
+			title: 'Make an appointment',
+			time: 'DD-MM-YYYY',
 		}
 		this.handleUserInput = this.handleUserInput.bind(this)
 		this.handleFormSubmit = this.handleFormSubmit.bind(this)
@@ -45,8 +45,11 @@ class Appointments extends React.Component {
 		const appointments = update(
 			this.state.appointments, { $push: [appointment] }
 		)
-		this.setState({ appointments: appointments.sort(function(a,b) {
-			return new Date(a.time) - new Date(b.time)
+		this.setState({
+			title: 'Make an appointment',
+			time: 'DD-MM-YYYY',
+			appointments: appointments.sort(function(a,b) {
+				return new Date(a.time) - new Date(b.time)
 		})})
 	}
 
