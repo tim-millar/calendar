@@ -5,6 +5,7 @@ import update from 'immutability-helper'
 
 import AppointmentForm from './AppointmentForm';
 import AppointmentsList from './AppointmentsList';
+import Appointment from './Appointment';
 
 class Appointments extends React.Component {
 	constructor (props) {
@@ -14,16 +15,13 @@ class Appointments extends React.Component {
 			title: 'Make an appointment',
 			time: 'DD-MM-YYYY',
 		}
-		this.handleUserInput = this.handleUserInput.bind(this)
-		this.handleFormSubmit = this.handleFormSubmit.bind(this)
-		this.addNewAppointment = this.addNewAppointment.bind(this)
 	}
 
-	handleUserInput (obj) {
+	handleUserInput = (obj) => {
 		this.setState(obj)
 	}
 
-	handleFormSubmit () {
+	handleFormSubmit = () => {
 		const appointment = {
 			title: this.state.title,
 			time: this.state.time,
@@ -41,7 +39,7 @@ class Appointments extends React.Component {
 		})
 	}
 
-	addNewAppointment (appointment) {
+	addNewAppointment = (appointment) => {
 		const appointments = update(
 			this.state.appointments, { $push: [appointment] }
 		)
@@ -61,7 +59,21 @@ class Appointments extends React.Component {
 					time={this.state.time}
 					onUserInput={this.handleUserInput}
 					onFormSubmit={this.handleFormSubmit} />
-				<AppointmentsList appointments={this.state.appointments} />
+				<AppointmentsList
+					appointments={this.state.appointments}>
+					{appointments => {
+						return (
+							appointments.map(appointment => {
+								return (
+									<Appointment
+										key={appointment.id}
+										title={appointment.title}
+										time={appointment.time} />
+								)
+							})
+						)
+					}}
+			  </AppointmentsList>
 			</div>
 		)
 	}

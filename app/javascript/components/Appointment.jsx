@@ -1,7 +1,7 @@
 import React from 'react';
 import { formatDate } from './utils';
 
-class Appointment extends React.Component {
+class Appointment extends React.PureComponent {
 	render () {
 		return (
 			<div className="card">

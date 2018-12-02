@@ -1,28 +1,26 @@
 import React from 'react';
 import DateTime from 'react-datetime'
+import Label from './Label'
 import '../../../node_modules/react-datetime/css/react-datetime.css'
 
 class AppointmentForm extends React.Component {
 	constructor(props) {
 		super(props)
-		this.handleChange = this.handleChange.bind(this)
-		this.handleSubmit = this.handleSubmit.bind(this)
-		this.setTime = this.setTime.bind(this)
 	}
 
-	handleChange(event) {
+	handleChange = (event) => {
 		const name = event.target.name
 		let obj = {}
 		obj[name] = event.target.value
 		this.props.onUserInput(obj)
 	}
 
-	handleSubmit(event) {
+	handleSubmit = (event) => {
 		event.preventDefault()
 		this.props.onFormSubmit()
 	}
 
-	setTime(event) {
+	setTime = (event) => {
 		const name = 'time'
 		let obj = {}
 		if (obj[name] = event.toDate()) {
@@ -39,7 +37,8 @@ class AppointmentForm extends React.Component {
 			<form id="form" className="form card" onSubmit={this.handleSubmit}>
 				<div className="fields">
 					<div className="input-text">
-						<label htmlFor="title">Appointment Title</label><br/>
+						<Label label="Appointment Title" />
+						<br/>
 						<input
 							type="text"
 							name="title"
