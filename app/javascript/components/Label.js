@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-class Label extends React.Component {
+class Label extends React.PureComponent {
   render () {
     return (
       <React.Fragment>
@@ -14,4 +14,5 @@ class Label extends React.Component {
 Label.propTypes = {
   label: PropTypes.string
 };
+
 export default Label

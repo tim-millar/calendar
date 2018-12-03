@@ -1,6 +1,6 @@
 import React from 'react';
 
-class AppointmentsList extends React.Component {
+class AppointmentsList extends React.PureComponent {
 	render () {
 		return (
 			<div>

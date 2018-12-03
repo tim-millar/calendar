@@ -11,6 +11,11 @@ import {
 	Provider
 } from './context';
 
+if (process.env.NODE_ENV !== 'production') {
+  const { whyDidYouUpdate } = require('why-did-you-update');
+	whyDidYouUpdate(React)
+}
+
 class Appointments extends React.Component {
 	constructor (props) {
 		super(props)
