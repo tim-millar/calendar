@@ -2,6 +2,7 @@ import React from 'react';
 import DateTime from 'react-datetime'
 import Label from './Label'
 import '../../../node_modules/react-datetime/css/react-datetime.css'
+import { contextWrapper } from './context';
 
 class AppointmentForm extends React.Component {
 	constructor(props) {
@@ -63,4 +64,4 @@ class AppointmentForm extends React.Component {
 	}
 }
 
-export default AppointmentForm;
+export default contextWrapper(AppointmentForm);

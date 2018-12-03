@@ -6,6 +6,10 @@ import update from 'immutability-helper'
 import AppointmentForm from './AppointmentForm';
 import AppointmentsList from './AppointmentsList';
 import Appointment from './Appointment';
+import {
+	contextWrapper,
+	Provider
+} from './context';
 
 class Appointments extends React.Component {
 	constructor (props) {
@@ -52,13 +56,15 @@ class Appointments extends React.Component {
 	}
 
 	render () {
+		const context = {
+			onUserInput: this.handleUserInput,
+			onFormSubmit: this.handleFormSubmit
+		}
 		return (
 			<div>
-				<AppointmentForm
-					title={this.state.title}
-					time={this.state.time}
-					onUserInput={this.handleUserInput}
-					onFormSubmit={this.handleFormSubmit} />
+				<Provider value={context}>
+					<AppointmentForm title={this.state.title} time={this.state.time} />
+			  </Provider>
 				<AppointmentsList
 					appointments={this.state.appointments}>
 					{appointments => {
