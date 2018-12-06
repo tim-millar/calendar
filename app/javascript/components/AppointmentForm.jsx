@@ -1,5 +1,11 @@
 import React from 'react';
 import DateTime from 'react-datetime'
+import Input from '@material-ui/core/Input';
+import Icon from '@material-ui/core/Icon';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import CalendarToday from '@material-ui/icons/CalendarToday'
+import Button from '@material-ui/core/Button';
 import Label from './Label'
 import '../../../node_modules/react-datetime/css/react-datetime.css'
 import { contextWrapper } from './context';
@@ -33,33 +39,44 @@ class AppointmentForm extends React.Component {
 		let inputProps = {
 			name: 'time'
 		}
-
 		return (
 			<form id="form" className="form card" onSubmit={this.handleSubmit}>
 				<div className="fields">
 					<div className="input-text">
-						<Label label="Appointment Title" />
-						<br/>
-						<input
+						<TextField
+							label="Make an appointment"
 							type="text"
 							name="title"
-							value={this.props.title}
-							onChange={this.handleChange} />
+							fullWidth={true}
+							margin="normal"
+							variant="outlined"
+							onChange={this.handleChange}
+							InputProps={{
+								endAdornment: (
+									<InputAdornment postition="start">
+										<CalendarToday />
+									</InputAdornment>
+							)}}
+						/>
 						<br/>
 						<DateTime
 							input={false}
 							open={true}
 							inputProps={inputProps}
 							value={this.props.time}
-							onChange={this.setTime}
-							/>
+							onChange={this.setTime} />
+				    <Button
+			        variant="contained"
+			        color="primary"
+			        align="center"
+			        colorInherit={true}
+			        fullWidth={true} >
+				      Make Appointment
+			      </Button>
 						<br/>
 					</div>
-					<div className="submit-button">
-						<input type="submit" value="Make Appointment" />
-					</div>
 				</div>
-			</form>
+		  </form>
 		)
 	}
 }

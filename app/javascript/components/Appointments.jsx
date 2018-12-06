@@ -3,13 +3,15 @@ import PropTypes from "prop-types"
 import axios from 'axios'
 import update from 'immutability-helper'
 
+import Typography from '@material-ui/core/Typography';
+import AppBar from '@material-ui/core/AppBar';
+
 import AppointmentForm from './AppointmentForm';
 import AppointmentsList from './AppointmentsList';
 import Appointment from './Appointment';
-import {
-	contextWrapper,
-	Provider
-} from './context';
+import { contextWrapper, Provider } from './context';
+
+import 'typeface-roboto'
 
 if (process.env.NODE_ENV !== 'production') {
   const { whyDidYouUpdate } = require('why-did-you-update');
@@ -67,9 +69,16 @@ class Appointments extends React.Component {
 		}
 		return (
 			<div>
+				<AppBar position="sticky">
+					<Typography variant="h1"
+											align="center"
+											color="inherit">
+						Calendar
+					</Typography>
+				</AppBar>
 				<Provider value={context}>
 					<AppointmentForm title={this.state.title} time={this.state.time} />
-			  </Provider>
+				</Provider>
 				<AppointmentsList
 					appointments={this.state.appointments}>
 					{appointments => {
@@ -85,7 +94,7 @@ class Appointments extends React.Component {
 						)
 					}}
 			  </AppointmentsList>
-			</div>
+		  </div>
 		)
 	}
 }
