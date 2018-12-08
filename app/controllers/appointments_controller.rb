@@ -1,7 +1,11 @@
 class AppointmentsController < ApplicationController
   def index
     @appointments = Appointment.order(time: :asc)
-    render component: 'Appointments', props: { appointments: @appointments }
+    render(
+      component: 'Appointments',
+      props: { appointments: @appointments },
+      prerender: false
+    )
   end
 
   def create
