@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme'
-import  Appointment from '../../../app/javascript/components/Appointment';
+import  Appointment from 'Appointment';
 
 describe('Appointment', () => {
 	it('should render the title and date', () => {

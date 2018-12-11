@@ -8,6 +8,10 @@
     "roots": [
       "test/javascript"
     ],
+    "moduleDirectories": [
+      "node_modules",
+      "app/javascript/components"
+    ],
     "setupTestFrameworkScriptFile": "jest-enzyme",
 		"testEnvironment": "enzyme"
   },
