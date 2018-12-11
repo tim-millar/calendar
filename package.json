@@ -1,6 +1,16 @@
 {
   "name": "calreact",
   "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "roots": [
+      "test/javascript"
+    ],
+    "setupTestFrameworkScriptFile": "jest-enzyme",
+		"testEnvironment": "enzyme"
+  },
   "dependencies": {
     "@material-ui/core": "^3.6.1",
     "@material-ui/icons": "^3.0.1",
@@ -17,6 +27,12 @@
     "typeface-roboto": "^0.0.54"
   },
   "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "jest": "^23.6.0",
+    "jest-environment-enzyme": "^7.0.1",
+    "jest-enzyme": "^7.0.1",
     "webpack-dev-server": "2.11.2",
     "why-did-you-update": "^1.0.6"
   }
