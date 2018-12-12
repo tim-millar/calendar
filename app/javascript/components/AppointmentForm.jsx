@@ -69,7 +69,6 @@ class AppointmentForm extends React.Component {
 			        variant="contained"
 			        color="primary"
 			        align="center"
-			        colorInherit={true}
 			        fullWidth={true} >
 				      Make Appointment
 			      </Button>

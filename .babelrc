@@ -27,6 +27,7 @@
       {
         "spec": true
       }
-    ]
+    ],
+    "react-hot-loader/babel"
   ]
 }

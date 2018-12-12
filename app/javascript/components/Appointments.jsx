@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import axios from 'axios'
 import update from 'immutability-helper'
+import { hot } from 'react-hot-loader';
 
 import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
@@ -13,10 +14,10 @@ import { contextWrapper, Provider } from './context';
 
 import 'typeface-roboto'
 
-if (process.env.NODE_ENV !== 'production') {
-  const { whyDidYouUpdate } = require('why-did-you-update');
-	whyDidYouUpdate(React)
-}
+// if (process.env.NODE_ENV !== 'production') {
+//   const { whyDidYouUpdate } = require('why-did-you-update');
+// 	whyDidYouUpdate(React)
+// }
 
 class Appointments extends React.Component {
 	constructor (props) {
@@ -99,4 +100,4 @@ class Appointments extends React.Component {
 	}
 }
 
-export default Appointments
+export default hot(module)(Appointments)
