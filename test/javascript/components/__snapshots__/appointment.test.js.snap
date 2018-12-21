@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Appointment should render the title and date 1`] = `
+<div
+  className="card"
+>
+  <h3>
+    Appointment
+  </h3>
+  <p>
+    March 30 2018, 12:00:00 am
+  </p>
+</div>
+`;

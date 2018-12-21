@@ -13,7 +13,14 @@
       "app/javascript/components"
     ],
     "setupTestFrameworkScriptFile": "jest-enzyme",
-    "testEnvironment": "enzyme"
+    "testEnvironment": "enzyme",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/test/javascript/__mocks__/styleMock.js"
+    }
   },
   "dependencies": {
     "@material-ui/core": "^3.6.1",
