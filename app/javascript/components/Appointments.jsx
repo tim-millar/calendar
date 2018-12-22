@@ -24,7 +24,7 @@ class Appointments extends React.Component {
     super(props)
     this.state = {
       appointments: this.props.appointments,
-      title: 'Make an appointment',
+      title: '',
       time: 'DD-MM-YYYY',
     }
   }
