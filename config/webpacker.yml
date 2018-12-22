@@ -28,6 +28,9 @@ default: &default
     - .jpeg
     - .jpg
 
+  dev_server:
+    hmr: false
+
 development:
   <<: *default
   compile: true
