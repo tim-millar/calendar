@@ -2,7 +2,9 @@
   "name": "calreact",
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "format": "pretty-quick",
+    "lint": "eslint ./"
   },
   "jest": {
     "roots": [
@@ -42,11 +44,19 @@
     "babel-jest": "^23.6.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "jest-environment-enzyme": "^7.0.1",
     "jest-enzyme": "^7.0.1",
-    "webpack-dev-server": "2.11.2",
+    "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "3.0.0",
     "why-did-you-update": "^1.0.6"
   }
 }
