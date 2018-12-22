@@ -13,7 +13,14 @@
       "app/javascript/components"
     ],
     "setupTestFrameworkScriptFile": "jest-enzyme",
-    "testEnvironment": "enzyme"
+    "testEnvironment": "enzyme",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/test/javascript/__mocks__/styleMock.js"
+    }
   },
   "dependencies": {
     "@material-ui/core": "^3.6.1",
@@ -35,6 +42,7 @@
     "babel-jest": "^23.6.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "jest-environment-enzyme": "^7.0.1",
     "jest-enzyme": "^7.0.1",

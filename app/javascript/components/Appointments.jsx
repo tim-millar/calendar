@@ -12,7 +12,7 @@ import AppointmentsList from './AppointmentsList'
 import Appointment from './Appointment'
 import { contextWrapper, Provider } from './context'
 
-import 'typeface-roboto'
+import 'typeface-roboto/index.css'
 
 // if (process.env.NODE_ENV !== 'production') {
 //   const { whyDidYouUpdate } = require('why-did-you-update');
@@ -24,7 +24,7 @@ class Appointments extends React.Component {
     super(props)
     this.state = {
       appointments: this.props.appointments,
-      title: '',
+      title: 'Make an appointment',
       time: 'DD-MM-YYYY',
     }
   }

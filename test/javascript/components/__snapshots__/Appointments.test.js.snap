@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Appointments renders a new Appointments component 1`] = `
+<div>
+  <WithStyles(AppBar)
+    position="sticky"
+  >
+    <WithStyles(Typography)
+      align="center"
+      color="inherit"
+      variant="h1"
+    >
+      Calendar
+    </WithStyles(Typography)>
+  </WithStyles(AppBar)>
+  <ContextProvider
+    value={
+      Object {
+        "onFormSubmit": [Function],
+        "onUserInput": [Function],
+      }
+    }
+  >
+    <_class
+      time="DD-MM-YYYY"
+      title="Make an appointment"
+    />
+  </ContextProvider>
+  <AppointmentsList>
+    <Component />
+  </AppointmentsList>
+</div>
+`;
